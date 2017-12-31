@@ -1,0 +1,20 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: raft-node
+  labels:
+    app: raft-node
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: raft-node
+  template:
+    metadata:
+      labels:
+        app: raft-node
+    spec:
+      containers:
+      - name: raft-node
+        image: raft-node
+        imagePullPolicy: Never

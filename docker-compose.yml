@@ -1,0 +1,12 @@
+version: '3'
+services:
+    in-flight-node:
+        build: .
+    rabbit:
+        image: "rabbitmq:3.5.4-management"
+        ports:
+        - "15672:15672"
+networks:
+    default:
+        external:
+            name: node-network
